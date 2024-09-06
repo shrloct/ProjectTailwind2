@@ -19,6 +19,40 @@
         const sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("hidden");
       }
+
+      // Data untuk Chart Penjualan
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("salesChart").getContext("2d");
+        const salesChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+            ],
+            datasets: [
+              {
+                label: "Total Sales (in Rp)",
+                data: [
+                  1000000, 1500000, 1200000, 1800000, 2000000, 2200000, 2500000,
+                ],
+                borderColor: "rgba(59, 130, 246, 1)",
+                backgroundColor: "rgba(59, 130, 246, 0.2)",
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      });
     </script>
   </head>
   <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -26,6 +60,7 @@
     <div class="bg-gray-800 text-white flex justify-between md:hidden p-4">
       <h2 class="text-xl font-semibold">Admin Dashboard</h2>
       <button class="text-white focus:outline-none" onclick="toggleSidebar()">
+        <!-- Icon Hamburger -->
         <svg
           class="w-6 h-6"
           fill="none"
@@ -49,7 +84,7 @@
         class="hidden md:block w-64 h-screen bg-gray-800 text-white"
       >
         <div class="p-4">
-          <h2 class="text-xl font-semibold">Admin Dashboard</h2>
+          <h2 class="text-xl font-bold">Admin Dashboard</h2>
         </div>
         <nav class="mt-6">
           <a
@@ -76,20 +111,21 @@
             >Reports</a
           >
           <a
-            href="#"
+            href="settings.html"
             class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
             >Settings</a
           >
           <a
-            href="#"
+            href="logout.html"
             class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
             >Logout</a
           >
         </nav>
       </div>
 
+      <!-- Main Content  -->
       <div class="flex-1 p-6">
-        <h1 class="text-2xl font-bold mb-6">Reports</h1>
+        <h1 class="text-2xl font-semibold mb-6">Reports</h1>
 
         <!-- Statistik -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -131,6 +167,50 @@
             >
               Export to PDF
             </button>
+          </div>
+        </div>
+
+        <!-- Tabel dan Grafik -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Grafik Penjualan -->
+          <div class="bg-white shadow-md rounded-lg p-6 h-full">
+            <h2 class="text-xl font-semibold mb-4">Sales Overview</h2>
+            <div class="w-full h-64">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Tabel Produk Terlaris -->
+          <div class="bg-white shadow-md rounded-lg p-6 h-full">
+            <h2 class="text-xl font-semibold mb-4">Top Selling Products</h2>
+            <table class="min-w-max w-full table-auto">
+              <thead>
+                <tr
+                  class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"
+                >
+                  <th class="py-3 px-6 text-left">Product Name</th>
+                  <th class="py-3 px-6 text-center">Units Sold</th>
+                  <th class="py-3 px-6 text-center">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-600 text-sm font-light">
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-6 text-left">Laptop X200</td>
+                  <td class="py-3 px-6 text-center">150</td>
+                  <td class="py-3 px-6 text-center">Rp 1,500,000,000</td>
+                </tr>
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-6 text-left">Smartphone A10</td>
+                  <td class="py-3 px-6 text-center">250</td>
+                  <td class="py-3 px-6 text-center">Rp 1,250,000,000</td>
+                </tr>
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-6 text-left">Headphones Pro</td>
+                  <td class="py-3 px-6 text-center">300</td>
+                  <td class="py-3 px-6 text-center">Rp 600,000,000</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logout Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script defer>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- navbar -->
+    <div class="bg-gray-800 text-white flex justify-between md:hidden p-4">
+      <h2 class="text-xl font-semibold">Admin Dashboard</h2>
+      <button class="text-white focus:outline-none" onclick="toggleSidebar()">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex">
+      <div
+        id="sidebar"
+        class="hidden md:block w-64 h-screen bg-gray-800 text-white"
+      >
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">Admin Dashboard</h2>
+        </div>
+        <nav class="mt-6">
+          <a
+            href="#"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Dashboard</a
+          >
+          <a
+            href="users.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Users</a
+          >
+          <a
+            href="orders.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Orders</a
+          >
+          <a
+            href="products.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Products</a
+          >
+          <a
+            href="reports.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Reports</a
+          >
+          <a
+            href="settings.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Settings</a
+          >
+          <a href="logout.html" class="block py-2.5 px-4 bg-gray-700">Logout</a>
+        </nav>
+      </div>
+
+      <!-- main content -->
+      <div class="flex flex-1 p-6 flex-col justify-center items-center">
+        <h1 class="text-6xl font-bold mb-6">404</h1>
+        <p>Not Found</p>
+      </div>
+    </div>
+  </body>
+</html>

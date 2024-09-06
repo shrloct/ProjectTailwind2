@@ -25,7 +25,6 @@
     <div class="bg-gray-800 text-white flex justify-between md:hidden p-4">
       <h2 class="text-xl font-semibold">Admin Dashboard</h2>
       <button class="text-white focus:outline-none" onclick="toggleSidebar()">
-        <!-- Icon Hamburger -->
         <svg
           class="w-6 h-6"
           fill="none"
@@ -69,7 +68,7 @@
             >Products</a
           >
           <a
-            href="#"
+            href="reports.html"
             class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
             >Reports</a
           >
@@ -216,8 +215,13 @@
 
         <!-- Export to CSV -->
         <div class="mt-4 flex justify-end">
-          <button class="bg-green-500 text-white py-2 px-4 rounded-lg">
+          <button class="bg-green-500 text-white py-25 px-4 rounded-lg mr-2">
             Export to CSV
+          </button>
+          <button
+            class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          >
+            Export to PDF
           </button>
         </div>
       </div>

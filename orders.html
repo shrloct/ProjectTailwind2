@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
+    <title>Orders Dashboard</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -208,7 +208,30 @@
               </tbody>
             </table>
           </div>
-  
+          
+          <!-- Pagination -->
+        <div class="mt-4 flex justify-between">
+          <span class="text-gray-600">Showing 1 to 10 of 50 entries</span>
+          <div>
+            <button class="bg-gray-200 text-gray-600 py-2 px-4 rounded-l-lg">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <button class="bg-gray-200 text-gray-600 py-2 px-4">1</button>
+            <button class="bg-gray-200 text-gray-600 py-2 px-4">2</button>
+
+            <button class="bg-gray-200 text-gray-600 py-2 px-4 rounded-r-lg">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Export to CSV -->
+        <div class="mt-4 flex justify-end">
+          <button class="bg-green-500 text-white py-2 px-4 rounded-lg">
+            Export to CSV
+          </button>
+        </div>
 
     </div>
   </body>
